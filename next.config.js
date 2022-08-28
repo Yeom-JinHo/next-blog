@@ -1,3 +1,5 @@
-// const withTM = require("next-transpile-modules")(["react-markdown"]);
-
-// module.exports = withTM({ webpack5: false });
+module.exports = {
+  images: {
+    domains: ["user-images.githubusercontent.com"],
+  },
+};
