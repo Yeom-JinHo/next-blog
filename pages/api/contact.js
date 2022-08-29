@@ -23,7 +23,11 @@ async function handler(req, res) {
     } catch (e) {
       res
         .status(500)
-        .json({ message: e.message, password: process.DB_PASSWORD });
+        .json({
+          message: e.message,
+          password: process.DB_PASSWORD,
+          url: `mongodb+srv://jinho1:${process.DB_PASSWORD}@cluster0.htmkxdg.mongodb.net/next?retryWrites=true&w=majority`,
+        });
       return;
     }
     const db = client.db();
