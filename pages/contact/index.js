@@ -1,7 +1,8 @@
 import React from "react";
+import ContactForm from "../../components/contact/contact-form";
 
-const index = () => {
-  return <div></div>;
+const ContactPage = () => {
+  return <ContactForm />;
 };
 
-export default index;
+export default ContactPage;
