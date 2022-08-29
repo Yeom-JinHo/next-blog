@@ -23,6 +23,7 @@ async function handler(req, res) {
     } catch (e) {
       res.status(500).json({
         message: e.message,
+        test: process.NEXT_PUBLIC_DB_PASSWORD,
         url: `mongodb+srv://jinho1:${process.DB_PASSWORD}@cluster0.htmkxdg.mongodb.net/next?retryWrites=true&w=majority`,
       });
       return;
