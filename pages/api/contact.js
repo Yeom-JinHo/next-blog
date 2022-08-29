@@ -18,14 +18,11 @@ async function handler(req, res) {
     let client;
     try {
       client = await MongoClient.connect(
-        `mongodb+srv://jinho1:${process.NEXT_PUBLIC_DB_PASSWORD}@cluster0.htmkxdg.mongodb.net/next?retryWrites=true&w=majority`
+        `mongodb+srv://jinho1:${process.env.DB_PASSWORD}@cluster0.htmkxdg.mongodb.net/next?retryWrites=true&w=majority`
       );
     } catch (e) {
       res.status(500).json({
         message: e.message,
-        test:
-          process.env.NEXT_PUBLIC_DB_PASSWORD + "!" + process.env.DB_PASSWORD,
-        url: `mongodb+srv://jinho1:${process.DB_PASSWORD}@cluster0.htmkxdg.mongodb.net/next?retryWrites=true&w=majority`,
       });
       return;
     }
