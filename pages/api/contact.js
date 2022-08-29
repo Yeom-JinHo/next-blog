@@ -18,7 +18,7 @@ async function handler(req, res) {
     let client;
     try {
       client = await MongoClient.connect(
-        "mongodb+srv://jinho1:a1123@cluster0.htmkxdg.mongodb.net/next?retryWrites=true&w=majority"
+        `mongodb+srv://jinho1:${process.DB_PASSWORD}@cluster0.htmkxdg.mongodb.net/next?retryWrites=true&w=majority`
       );
     } catch (e) {
       res.status(500).json({ message: e.message });
